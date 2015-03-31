@@ -1,0 +1,9 @@
+Please create a Rails application with the following functional specs.
+
+We expect a working prototype -- request you to complete and submit the same by 01/04/2015 end of day.
+
+· User should be register using his email address and password
+· Once logged in user should be able to edit his personal details (name, address, gender etc)
+· User should be able to upload his/her profile image
+· User should be able to search other users by name/email address   and view their details.
+. User should be able to add new tasks to his task list and should be able to update them as done.
