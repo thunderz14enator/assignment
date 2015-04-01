@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+
   #routes for devise
   devise_for :users, controllers: { registrations: "users/registrations" }
 
+  resources :users, :only => [:index] do
+    resources :tasks
+  end
+
   #routes for Welcome controller
-  resources :welcome
+  resources :welcome do
+    collection do
+      post :search
+    end
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

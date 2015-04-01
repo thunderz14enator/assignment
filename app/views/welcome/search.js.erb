@@ -1,0 +1,9 @@
+<% if params[:search_value].present? %>
+  <% if @search_result.present? %>
+    $('#search-result').html("<%= j render(:partial => 'users/user_list', :collection => @search_result) %>");
+  <% else %>
+    $('#search-result').html('<h3> No Records Found </h3>')
+  <% end %>
+<% else %>
+  $('#search-result').html('<h3> Please provide any value </h3>')
+<% end %>

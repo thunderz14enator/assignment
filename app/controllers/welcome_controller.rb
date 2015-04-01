@@ -8,9 +8,11 @@ class WelcomeController < ApplicationController
 
   #Search users on the basis of name or email
   def search
-    conditions = []
-    conditions << "users.name LIKE '%#{params[:search_value]}%'"
-    conditions << "users.email LIKE '%#{params[:search_value]}%'"
-    @search_result = User.where(conditions.join(" OR "))
+    if params[:search_value].present?
+      conditions = []
+      conditions << "users.name LIKE '%#{params[:search_value]}%'"
+      conditions << "users.email LIKE '%#{params[:search_value]}%'"
+      @search_result = User.where(conditions.join(" OR "))
+    end
   end
 end

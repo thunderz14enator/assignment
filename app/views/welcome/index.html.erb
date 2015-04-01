@@ -1,3 +1,12 @@
-#index.html.erb
-<%= link_to "Update Your Details", edit_user_registration_path %>
-
+<%= form_tag search_welcome_index_path,:remote => true do %>
+  <div class="field">
+    <%= text_field_tag :search_value, "",
+    { :placeholder => "Enter the name of user to search",
+     :style => "width:200px;"} %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Search" %>
+  </div>
+<% end %>
+<h1> Search Result </h1>
+<div id="search-result"></div>
